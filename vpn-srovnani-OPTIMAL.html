@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nejlepší VPN 2026 – Srovnání a recenze</title>
+  <meta name="description" content="Nezávislé srovnání nejlepších VPN služeb v roce 2026.">
+  <style>
+    :root {
+      --cyan: #22d3ee;
+      --cyan-bright: #67e8f9;
+      --pink: #e879f9;
+      --success: #34d399;
+      --bg: #05080f;
+      --card: rgba(12, 18, 32, 0.78);
+      --text: #f0f9ff;
+      --muted: #94a3b8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== POZADÍ ===== */
+    .parallax-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .parallax-layer {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      will-change: transform;
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+    }
+    .layer-1 {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.25) 0%, transparent 70%);
+      top: -180px;
+      left: -140px;
+      opacity: 0.9;
+    }
+    .layer-2 {
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(232, 121, 249, 0.18) 0%, transparent 70%);
+      bottom: -120px;
+      right: -100px;
+      opacity: 0.85;
+    }
+
+    .grid-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+      background-size: 55px 55px;
+      z-index: -1;
+      pointer-events: none;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: rgba(5, 8, 15, 0.82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(34, 211, 238, 0.15);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--cyan-bright);
+      text-decoration: none;
+      text-shadow: 0 0 25px rgba(34, 211, 238, 0.55);
+      transition: text-shadow 0.25s ease;
+    }
+    .logo:hover {
+      text-shadow: 0 0 40px rgba(34, 211, 238, 0.8);
+    }
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.25s ease, text-shadow 0.25s ease;
+    }
+    nav a:hover {
+      color: var(--cyan-bright);
+      text-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 75px 0 50px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.15;
+      background: linear-gradient(90deg, #22d3ee, #67e8f9, #e879f9, #22d3ee);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientMove 8s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 26px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(34, 211, 238, 0.1);
+      color: #67e8f9;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.12);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 48px 0 18px;
+      color: #e0f2fe;
+    }
+
+    /* ===== TABULKA ===== */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid rgba(34, 211, 238, 0.15);
+      box-shadow: 0 0 40px rgba(34, 211, 238, 0.05);
+      backdrop-filter: blur(10px);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+    th, td {
+      padding: 17px 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(34, 211, 238, 0.07);
+    }
+    th {
+      background: rgba(15, 23, 42, 0.45);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr { transition: background 0.2s ease; }
+    tr:hover td { background: rgba(34, 211, 238, 0.05); }
+    .score {
+      font-weight: 700;
+      color: var(--success);
+      font-size: 1.05rem;
+    }
+
+    /* ===== TLAČÍTKA ===== */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #06b6d4, #22d3ee);
+      color: #05080f !important;
+      padding: 11px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      box-shadow: 0 0 22px rgba(34, 211, 238, 0.35);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.25s ease;
+      will-change: transform;
+      backface-visibility: hidden;
+    }
+    .btn:hover {
+      transform: translate3d(0, -3px, 0);
+      box-shadow: 0 0 35px rgba(34, 211, 238, 0.55);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #22d3ee;
+      color: #67e8f9 !important;
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: rgba(34, 211, 238, 0.1);
+      color: white !important;
+      box-shadow: 0 0 22px rgba(34, 211, 238, 0.3);
+    }
+
+    /* ===== KARTY ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 22px;
+      margin: 28px 0 48px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(34, 211, 238, 0.13);
+      border-radius: 16px;
+      padding: 26px;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease;
+      will-change: transform;
+      backface-visibility: hidden;
+      contain: layout style paint;
+    }
+    .card:hover {
+      transform: translate3d(0, -7px, 0);
+      border-color: rgba(34, 211, 238, 0.35);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.3), 0 0 30px rgba(34, 211, 238, 0.1);
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      color: #f0f9ff;
+    }
+    .card .rating {
+      color: #fbbf24;
+      font-weight: 600;
+      margin-bottom: 11px;
+      font-size: 0.95rem;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+    .card ul { list-style: none; margin: 14px 0; }
+    .card li {
+      padding: 4px 0;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+    .card li::before {
+      content: "✓ ";
+      color: var(--success);
+      font-weight: 700;
+    }
+    .card .price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 12px 0 14px;
+      color: #67e8f9;
+    }
+
+    /* ===== CTA ===== */
+    .cta-box {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.13), rgba(232, 121, 249, 0.1));
+      border: 1px solid rgba(34, 211, 238, 0.25);
+      border-radius: 18px;
+      padding: 46px 36px;
+      text-align: center;
+      margin: 48px 0;
+      backdrop-filter: blur(10px);
+    }
+    .cta-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #22d3ee, #e879f9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cta-box p {
+      margin-bottom: 26px;
+      font-size: 1.05rem;
+      color: #cbd5e1;
+    }
+    .cta-box .btn {
+      background: linear-gradient(135deg, #22d3ee, #67e8f9);
+      color: #05080f !important;
+      font-size: 1rem;
+      padding: 13px 26px;
+    }
+
+    .disclaimer {
+      background: rgba(251, 191, 36, 0.07);
+      border: 1px solid rgba(251, 191, 36, 0.18);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 0.9rem;
+      margin: 28px 0;
+      color: #fde68a;
+    }
+
+    footer {
+      background: rgba(5, 8, 15, 0.95);
+      color: var(--muted);
+      padding: 36px 0;
+      margin-top: 55px;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(34, 211, 238, 0.08);
+    }
+
+    /* Fade-in */
+    .fade-in {
+      animation: fadeInUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .fade-in-delay-1 { animation-delay: 0.08s; }
+    .fade-in-delay-2 { animation-delay: 0.16s; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translate3d(0, 18px, 0); }
+      to { opacity: 1; transform: translate3d(0, 0, 0); }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.9rem; }
+      nav { display: none; }
+      .cta-box { padding: 32px 22px; }
+      .cta-box h2 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parallax-bg">
+    <div class="parallax-layer layer-1" data-speed="0.13"></div>
+    <div class="parallax-layer layer-2" data-speed="0.2"></div>
+  </div>
+  <div class="grid-overlay" id="grid"></div>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">VPNSrovnání.cz</a>
+      <nav>
+        <a href="#srovnani">Srovnání</a>
+        <a href="#recenze">Recenze</a>
+        <a href="#jak-vybrat">Jak vybrat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero fade-in">
+      <div class="badge">Aktualizováno listopad 2026</div>
+      <h1>Nejlepší VPN služby 2026</h1>
+      <p>Nezávislé srovnání rychlosti, bezpečnosti a ceny. Pomůžeme ti vybrat VPN, která opravdu funguje.</p>
+    </section>
+
+    <div class="disclaimer fade-in fade-in-delay-1">
+      <strong>Affiliate upozornění:</strong> Tento web obsahuje affiliate odkazy. Pokud si přes ně něco koupíš, můžeme získat provizi – pro tebe se cena nemění.
+    </div>
+
+    <h2 class="section-title fade-in fade-in-delay-1" id="srovnani">Rychlé srovnání top 5 VPN</h2>
+    <div class="table-wrap fade-in fade-in-delay-2">
+      <table>
+        <thead>
+          <tr>
+            <th>Pozice</th>
+            <th>Služba</th>
+            <th>Hodnocení</th>
+            <th>Cena od</th>
+            <th>Zařízení</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>#1</strong></td>
+            <td><strong>NordVPN</strong></td>
+            <td class="score">9.8/10</td>
+            <td>od 3,29 €/měs</td>
+            <td>6 zařízení</td>
+            <td><a href="TVUJ_NORDVPN_LINK" class="btn" target="_blank" rel="noopener sponsored">Zobrazit nabídku</a></td>
+          </tr>
+          <tr>
+            <td><strong>#2</strong></td>
+            <td><strong>Surfshark</strong></td>
+            <td class="score">9.5/10</td>
+            <td>od 2,49 €/měs</td>
+            <td>Neomezeně</td>
+            <td><a href="TVUJ_SURFSHARK_LINK" class="btn" target="_blank" rel="noopener sponsored">Zobrazit nabídku</a></td>
+          </tr>
+          <tr>
+            <td><strong>#3</strong></td>
+            <td><strong>ExpressVPN</strong></td>
+            <td class="score">9.4/10</td>
+            <td>od 6,67 €/měs</td>
+            <td>8 zařízení</td>
+            <td><a href="TVUJ_EXPRESSVPN_LINK" class="btn" target="_blank" rel="noopener sponsored">Zobrazit nabídku</a></td>
+          </tr>
+          <tr>
+            <td>#4</td>
+            <td>CyberGhost</td>
+            <td class="score">9.1/10</td>
+            <td>od 2,19 €/měs</td>
+            <td>7 zařízení</td>
+            <td><a href="TVUJ_CYBERGHOST_LINK" class="btn btn-outline" target="_blank" rel="noopener sponsored">Detail</a></td>
+          </tr>
+          <tr>
+            <td>#5</td>
+            <td>Proton VPN</td>
+            <td class="score">8.9/10</td>
+            <td>od 4,99 €/měs</td>
+            <td>10 zařízení</td>
+            <td><a href="TVUJ_PROTON_LINK" class="btn btn-outline" target="_blank" rel="noopener sponsored">Detail</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-title" id="recenze">Detailní recenze</h2>
+    <div class="cards">
+      <div class="card fade-in">
+        <h3>NordVPN</h3>
+        <div class="rating">★★★★★ 9.8/10</div>
+        <p>Nejlepší celkový poměr cena/výkon. Rychlé servery, silné šifrování a skvělé aplikace.</p>
+        <ul>
+          <li>Double VPN + Onion over VPN</li>
+          <li>Threat Protection</li>
+          <li>6 zařízení současně</li>
+          <li>30denní garance vrácení peněz</li>
+        </ul>
+        <div class="price">od 3,29 € / měsíc</div>
+        <a href="TVUJ_NORDVPN_LINK" class="btn" target="_blank" rel="noopener sponsored">Získat slevu NordVPN →</a>
+      </div>
+
+      <div class="card fade-in fade-in-delay-1">
+        <h3>Surfshark</h3>
+        <div class="rating">★★★★★ 9.5/10</div>
+        <p>Nejlepší volba pro více zařízení a nízkou cenu. Neomezený počet zařízení.</p>
+        <ul>
+          <li>Neomezený počet zařízení</li>
+          <li>CleanWeb (ad-blocker)</li>
+          <li>Velmi dobrá cena</li>
+          <li>Camouflage Mode</li>
+        </ul>
+        <div class="price">od 2,49 € / měsíc</div>
+        <a href="TVUJ_SURFSHARK_LINK" class="btn" target="_blank" rel="noopener sponsored">Získat Surfshark →</a>
+      </div>
+
+      <div class="card fade-in fade-in-delay-2">
+        <h3>ExpressVPN</h3>
+        <div class="rating">★★★★☆ 9.4/10</div>
+        <p>Premium volba pro maximální rychlost a spolehlivost. Ideální pro streaming.</p>
+        <ul>
+          <li>Nejrychlejší v testech</li>
+          <li>Lightway protokol</li>
+          <li>Skvělé pro Netflix</li>
+          <li>24/7 podpora</li>
+        </ul>
+        <div class="price">od 6,67 € / měsíc</div>
+        <a href="TVUJ_EXPRESSVPN_LINK" class="btn" target="_blank" rel="noopener sponsored">Vyzkoušet ExpressVPN →</a>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h2>Nejsi si jistý, kterou vybrat?</h2>
+      <p>Většině lidí doporučujeme <strong>NordVPN</strong> – nejlepší poměr cena/výkon.</p>
+      <a href="TVUJ_NORDVPN_LINK" class="btn" target="_blank" rel="noopener sponsored">Podívat se na nabídku NordVPN</a>
+    </div>
+
+    <h2 class="section-title" id="jak-vybrat">Jak jsme testovali</h2>
+    <p style="margin-bottom: 12px; color: var(--muted);">
+      Každou službu jsme testovali na rychlost, stabilitu, dostupnost streamovacích služeb, kvalitu aplikací a podporu.
+    </p>
+    <p style="color: var(--muted);">
+      Ceny jsou aktuální k listopadu 2026 a zahrnují dlouhodobé slevy.
+    </p>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>© 2026 VPNSrovnání.cz</strong> – Nezávislé srovnání VPN služeb</p>
+      <p style="margin-top: 10px;">
+        Tento web je affiliate projekt. Doporučujeme pouze služby, které jsme otestovali.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const layers = document.querySelectorAll('.parallax-layer');
+    const grid = document.getElementById('grid');
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      layers.forEach(l => l.style.display = 'none');
+    }
+
+    let ticking = false;
+
+    function updateParallax() {
+      const y = window.scrollY;
+      layers.forEach(layer => {
+        const speed = parseFloat(layer.dataset.speed) || 0.1;
+        layer.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+      });
+      if (grid) {
+        grid.style.transform = `translate3d(0, ${y * 0.035}px, 0)`;
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    updateParallax();
+  </script>
+
+</body>
+</html>
